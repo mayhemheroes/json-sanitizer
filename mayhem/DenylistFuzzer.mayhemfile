@@ -1,0 +1,8 @@
+project: PROJECT
+target: DenylistFuzzer
+cmds:
+- cmd: /out/jazzer_driver --agent_path=/out/jazzer_agent_deploy.jar --cp=/out/json-sanitizer.jar:/out/gson-2.8.6.jar::.:/out --target_class=DenylistFuzzer --jvm_args="-Xmx2048m"
+  env:
+    LD_LIBRARY_PATH: '"/usr/lib/jvm/java-15-openjdk-amd64/lib/server":/out'
+  timeout: 50
+  libfuzzer: true
